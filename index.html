@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!--Tags-->
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="og:description" content="Transfer files peer to peer easy, without account or server, serverless peer to peer connection">
+	<meta property="og:title" content="Transfer peer to peer" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:site_name" content="Your Files, delivered securely without any server." />
+	<link rel="shortcut icon" type="image/x-icon" href="IMG/favicon.ico">
+	<script src="https://cdn.jsdelivr.net/npm/webtorrent@latest/webtorrent.min.js"></script>
+	<script type="module" src="JS/index.js"></script>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="CSS/style.css">
+	<title style="font-family: monospace;">Your Files, delivered securely without any server.</title>
+<body>
+	<!--main container-->
+	<div id="main-container">
+		<div class="content">
+            <img src="IMG/filedonut.png" alt="logo">
+            <h1 style="font-family: garamond;">FileDonut!</h1>
+            <p style="font-family: monospace;">Free peer-to-peer file transfers in your browser.<br>
+            <small class="notice" style="font-family: monospace;">We never store anything. Files only served fresh.</small></p>
+            
+			<div class="form">
+				<div class="upload">
+					<h3 style="font-family: monospace;">Upload your File below!</h3>
+					<input type="file" name="upload" id="upload" multiple="multiple">
+					<button class="upload-action" style="font-family: monospace;">Select a file!</button>
+					<p class="text" style="font-family: monospace;">Share your file serverlessly.</p>
+					<input class="magnet-show" type="text" >
+					<input type="text" class="magnet-link">
+					<button class="share hide" style="font-family: monospace;">Copy Share link</button>
+					<button class="cp hide" style="font-family: monospace;">Copy magnet link.</button>
+				</div>
+				<div class="download">
+					<h3 style="font-family: monospace;">Or download with a magnet:)</h3>
+					<input type="text" id="download" placeholder="magnet id">
+					<button style="font-family: monospace;">Get files</button>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<p class="end-footer" style="font-family: monospace;">
+				<strong>Like FileDonut?</strong> Baked up by
+				<a href="https://github.com/shyampatell17" target="_blank">Shyam Patel</a>
+				while drinking coffee.
+				&middot;
+				<a href="https://github.com/shyampatell17/FileDonutt" target="_blank">
+					FAQ
+				</a>
+				&middot;
+				<a href="https://github.com/shyampatell17/FileDonutt" target="_blank">
+					Fork us
+				</a>
+			</p>
+			
+		</footer>
+	</div>
+	<!--main conntainer ends-->
+	<!--hidden wrapper for download-->
+	<div id="main-modal" class="modal-wrapper hidden">
+		<div>
+			<h3 class="title" style="font-family: monospace;">Loading please wait...<div class="loader"></div></h3>
+			<div id="download-links" class="modal-content">
+				<p>Progress...<span id="progress">0</span>%</p>
+				<p><i >this may take a few minutes</i></p>
+			</div>
+			<div class="actions hidden">
+				<button id="dw-all" style="font-family: monospace;">Download All</button>
+				<button id="close" style="font-family: monospace;">Close</button>
+			</div>
+		</div>
+	</div>
+	<!--wrapper ends-->
+	<!--peers info wrapper-->
+	<div class="away" id="info-wrapper">
+		<div class="peers">
+			<p>Peers: <span id="peer-count">0</span></p>
+		</div>
+		<div class="upload-speed">
+			<p>Upload speed: <span id="upload-speed">0</span>Mb/s</p>
+		</div>
+		<div class="download-speed">
+			<p>Download speed: <span id="download-speed">0</span>Mb/s</p>
+		</div>
+	</div>
+	<!--peers info wrapper ends-->
+
+</body>
+</html>
